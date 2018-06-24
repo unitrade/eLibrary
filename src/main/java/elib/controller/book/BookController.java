@@ -80,21 +80,21 @@ public class BookController {
     book1.setPublisherDate(book.getPublisherDate().atStartOfDay().toInstant(ZoneOffset.UTC).getEpochSecond());
     book1.setDescription(book.getDescription());
     bookService.create(book1);
-    return "index";
+    return "books";
   }
 
   @RequestMapping(path = "/update", method = RequestMethod.POST)
   public String updateBook(Book book) {
     System.out.println("Описание: " + book.toString());
     bookService.update(book);
-    return "index";
+    return "books";
   }
 
   @RequestMapping(path = "/delete/{bookId}", method = RequestMethod.GET)
   public String deleteBook(@PathVariable(name = "bookId") Long bookId) {
     Book book = bookService.find(bookId);
     bookService.delete(book);
-    return "redirect:/index";
+    return "redirect:/books";
   }
 
 }

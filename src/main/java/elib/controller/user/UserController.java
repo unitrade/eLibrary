@@ -35,14 +35,14 @@ public class UserController {
     this.roleService = roleService;
   }
 
-  @RequestMapping(path = "/login", method = RequestMethod.POST)
-  public ResponseEntity login(ModelAndView modelAndView, @ModelAttribute(name = "login") UserForm user,
-                              BindingResult bindingResult,
-                              HttpServletRequest reques){
-    User user1 = new User();
-    user1.setEmail(user.getEmail());
-    return ResponseEntity.ok("Login: " + user1.getEmail());
-  }
+//  @RequestMapping(path = "/login", method = RequestMethod.POST)
+//  public ResponseEntity login(ModelAndView modelAndView, @ModelAttribute(name = "login") UserForm user,
+//                              BindingResult bindingResult,
+//                              HttpServletRequest reques){
+//    User user1 = new User();
+//    user1.setEmail(user.getEmail());
+//    return ResponseEntity.ok("Login: " + user1.getEmail());
+//  }
 
   @RequestMapping(path = "/get/{userId}", method = RequestMethod.GET)
   public ResponseEntity getUserById(@PathVariable Long userId) {

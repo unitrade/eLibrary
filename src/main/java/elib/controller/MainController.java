@@ -41,11 +41,13 @@ public class MainController {
 
   @GetMapping("/")
   public String root(Model model){
+    model.addAttribute("categories", categoryService.findAll());
     return "index";
   }
 
   @GetMapping("/index")
   public String index(Model model){
+    model.addAttribute("categories", categoryService.findAll());
     return "index";
   }
 
@@ -83,6 +85,7 @@ public class MainController {
   @GetMapping("/update_book/{bookId}")
   public String update(Model model, @PathVariable(required = false, name = "bookId") Long bookId){
 //    model.addAttribute("edit", new EditBookRequest());
+
     model.addAttribute("book", bookService.find(bookId));
     model.addAttribute("authors", authorService.findAll());
     model.addAttribute("categories", categoryService.findAll());

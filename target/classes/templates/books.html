@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li><a th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!>
+            <li th:inline="text" >Hello [[${#httpServletRequest.remoteUser}]]!
                 <form th:action="@{/logout}" method="post">
                     <input type="submit" value="Sign Out"/>
                 </form>  </li>

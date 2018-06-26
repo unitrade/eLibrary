@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5820bf9b-11bb-49a9-bde4-bb4c05983f0c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elib/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elib/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elib/controller/book/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elib/controller/book/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elib/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elib/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/elib/controller/book/BookController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/elib/controller/user/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="5820bf9b-11bb-49a9-bde4-bb4c05983f0c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -222,7 +211,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -471,8 +460,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -486,7 +474,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.3297244" />
       <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.16151386" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3297244" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3297244" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297244" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="5" />

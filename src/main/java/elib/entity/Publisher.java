@@ -14,7 +14,7 @@ public class Publisher {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "publisher_id")
-  private Long publisherID;
+  private Long publisherId;
 
   @Column(name = "publisher_name", columnDefinition = "varchar (255)")
   private String publisherName;
@@ -32,18 +32,18 @@ public class Publisher {
   }
 
   public Publisher(Long publisherID, String publisherName, String description, String country) {
-    this.publisherID = publisherID;
+    this.publisherId = publisherID;
     this.publisherName = publisherName;
     this.description = description;
     this.country = country;
   }
 
-  public Long getPublisherID() {
-    return publisherID;
+  public Long getPublisherId() {
+    return publisherId;
   }
 
-  public void setPublisherID(Long publisherID) {
-    this.publisherID = publisherID;
+  public void setPublisherId(Long publisherId) {
+    this.publisherId = publisherId;
   }
 
   public String getPublisherName() {
@@ -85,7 +85,7 @@ public class Publisher {
 
     Publisher publisher = (Publisher) o;
 
-    if (!publisherID.equals(publisher.publisherID)) return false;
+    if (!publisherId.equals(publisher.publisherId)) return false;
     if (!publisherName.equals(publisher.publisherName)) return false;
     if (!description.equals(publisher.description)) return false;
     return country.equals(publisher.country);
@@ -93,7 +93,7 @@ public class Publisher {
 
   @Override
   public int hashCode() {
-    int result = publisherID.hashCode();
+    int result = publisherId.hashCode();
     result = 31 * result + publisherName.hashCode();
     result = 31 * result + description.hashCode();
     result = 31 * result + country.hashCode();
@@ -103,7 +103,7 @@ public class Publisher {
   @Override
   public String toString() {
     return "Publisher{" +
-            "publisherID=" + publisherID +
+            "publisherId=" + publisherId +
             ", publisherName='" + publisherName + '\'' +
             ", description='" + description + '\'' +
             ", country='" + country + '\'' +

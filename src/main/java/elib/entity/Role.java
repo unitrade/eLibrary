@@ -14,7 +14,7 @@ public class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "role_id")
-  private Long roleID;
+  private Long roleId;
 
   @Column(name = "role_name", columnDefinition = "varchar (255)")
   private String roleName;
@@ -26,16 +26,16 @@ public class Role {
   }
 
   public Role(Long roleID, String roleName) {
-    this.roleID = roleID;
+    this.roleId = roleID;
     this.roleName = roleName;
   }
 
-  public Long getRoleID() {
-    return roleID;
+  public Long getRoleId() {
+    return roleId;
   }
 
-  public void setRoleID(Long roleID) {
-    this.roleID = roleID;
+  public void setRoleId(Long roleId) {
+    this.roleId = roleId;
   }
 
   public String getRoleName() {
@@ -61,13 +61,13 @@ public class Role {
 
     Role role = (Role) o;
 
-    if (!roleID.equals(role.roleID)) return false;
+    if (!roleId.equals(role.roleId)) return false;
     return roleName.equals(role.roleName);
   }
 
   @Override
   public int hashCode() {
-    int result = roleID.hashCode();
+    int result = roleId.hashCode();
     result = 31 * result + roleName.hashCode();
     return result;
   }
@@ -75,7 +75,7 @@ public class Role {
   @Override
   public String toString() {
     return "Role{" +
-            "roleID=" + roleID +
+            "roleId=" + roleId +
             ", roleName='" + roleName + '\'' +
             '}';
   }

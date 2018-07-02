@@ -5,7 +5,6 @@ package elib.entity;
  */
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,7 +14,7 @@ public class Book {
   @Id
   @GeneratedValue (strategy = GenerationType.IDENTITY)
   @Column(name = "book_id", columnDefinition = "serial")
-  private Long bookID;
+  private Long bookId;
 
   @Column(name = "book_name", columnDefinition = "varchar (255)")
   private String bookName;
@@ -50,21 +49,24 @@ public class Book {
   public Book() {
   }
 
-  public Book(Long bookID, String bookName, String description, Integer pages,
-              Long publisherDate) {
-    this.bookID = bookID;
+  public Book(Long bookId, String bookName, Integer pages, Long publisherDate, String description,
+              List<Publisher> publishers, List<Author> authors, List<Category> categories) {
+    this.bookId = bookId;
     this.bookName = bookName;
-    this.description = description;
     this.pages = pages;
     this.publisherDate = publisherDate;
+    this.description = description;
+    this.publishers = publishers;
+    this.authors = authors;
+    this.categories = categories;
   }
 
-  public Long getBookID() {
-    return bookID;
+  public Long getBookId() {
+    return bookId;
   }
 
-  public void setBookID(Long bookID) {
-    this.bookID = bookID;
+  public void setBookId(Long bookId) {
+    this.bookId = bookId;
   }
 
   public String getBookName() {
@@ -130,7 +132,7 @@ public class Book {
 
     Book book = (Book) o;
 
-    if (bookID != null ? !bookID.equals(book.bookID) : book.bookID != null) return false;
+    if (bookId != null ? !bookId.equals(book.bookId) : book.bookId != null) return false;
     if (bookName != null ? !bookName.equals(book.bookName) : book.bookName != null) return false;
     if (pages != null ? !pages.equals(book.pages) : book.pages != null) return false;
     if (publisherDate != null ? !publisherDate.equals(book.publisherDate) : book.publisherDate != null) return false;
@@ -139,7 +141,7 @@ public class Book {
 
   @Override
   public int hashCode() {
-    int result = bookID != null ? bookID.hashCode() : 0;
+    int result = bookId != null ? bookId.hashCode() : 0;
     result = 31 * result + (bookName != null ? bookName.hashCode() : 0);
     result = 31 * result + (pages != null ? pages.hashCode() : 0);
     result = 31 * result + (publisherDate != null ? publisherDate.hashCode() : 0);
@@ -150,7 +152,7 @@ public class Book {
   @Override
   public String toString() {
     return "Book{" +
-            "bookID=" + bookID +
+            "bookId=" + bookId +
             ", bookName='" + bookName + '\'' +
             ", pages=" + pages +
             ", publisherDate=" + publisherDate +

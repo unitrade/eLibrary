@@ -19,7 +19,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,9 +84,34 @@ public class BookController {
   }
 
   @RequestMapping(path = "/update", method = RequestMethod.POST)
-  public String updateBook(Book book) {
+  public String updateBook(ModelAndView modelAndView, @ModelAttribute(name = "book") EditBookRequest book,
+                           BindingResult bindingResult,
+                           HttpServletRequest request) {
     System.out.println("Описание: " + book.toString());
-    bookService.update(book);
+    Book book1 = new Book();
+    book1.setBookId(book.getBookId());
+    book1.setBookName(book.getBookName());
+
+    List<Author> authors = new ArrayList<>();
+    List<Category> categories = new ArrayList<>();
+    List<Publisher> publishers = new ArrayList<>();
+    for (Long authorId: book.getAuthorId()) {
+      authors.add(authorService.find(authorId));
+    }
+    book1.setAuthors(authors);
+    for (Long catId: book.getCategoriesId()) {
+      categories.add(categoryService.find(catId));
+    }
+    book1.setCategories(categories);
+    for (Long pubId: book.getPublisherId()) {
+      publishers.add(publisherService.find(pubId));
+    }
+    book1.setPublishers(publishers);
+
+    book1.setPages(book.getPages());
+    book1.setPublisherDate(book.getPublisherDate().atStartOfDay().toInstant(ZoneOffset.UTC).getEpochSecond());
+    book1.setDescription(book.getDescription());
+    bookService.update(book1);
     return "books";
   }
 

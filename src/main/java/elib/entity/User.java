@@ -1,7 +1,6 @@
 package elib.entity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -15,7 +14,7 @@ public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "user_id", columnDefinition = "serial")
-  private Long userID;
+  private Long userId;
 
   @Column(name = "user_first_name", columnDefinition = "varchar (255)")
   private String userFirstName;
@@ -42,7 +41,7 @@ public class User {
   }
 
   public User(Long userID, String userFirstName, String userLastName, String email, String password, Long date) {
-    this.userID = userID;
+    this.userId = userID;
     this.userFirstName = userFirstName;
     this.userLastName = userLastName;
     this.email = email;
@@ -50,12 +49,12 @@ public class User {
     this.date = date;
   }
 
-  public Long getUserID() {
-    return userID;
+  public Long getUserId() {
+    return userId;
   }
 
-  public void setUserID(Long userID) {
-    this.userID = userID;
+  public void setUserId(Long userId) {
+    this.userId = userId;
   }
 
   public String getUserFirstName() {
@@ -113,7 +112,7 @@ public class User {
 
     User user = (User) o;
 
-    if (userID != null ? !userID.equals(user.userID) : user.userID != null) return false;
+    if (userId != null ? !userId.equals(user.userId) : user.userId != null) return false;
     if (userFirstName != null ? !userFirstName.equals(user.userFirstName) : user.userFirstName != null) return false;
     if (userLastName != null ? !userLastName.equals(user.userLastName) : user.userLastName != null) return false;
     if (email != null ? !email.equals(user.email) : user.email != null) return false;
@@ -123,7 +122,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    int result = userID != null ? userID.hashCode() : 0;
+    int result = userId != null ? userId.hashCode() : 0;
     result = 31 * result + (userFirstName != null ? userFirstName.hashCode() : 0);
     result = 31 * result + (userLastName != null ? userLastName.hashCode() : 0);
     result = 31 * result + (email != null ? email.hashCode() : 0);
@@ -135,7 +134,7 @@ public class User {
   @Override
   public String toString() {
     return "User{" +
-            "userID=" + userID +
+            "userId=" + userId +
             ", userFirstName='" + userFirstName + '\'' +
             ", userLastName='" + userLastName + '\'' +
             ", email='" + email + '\'' +

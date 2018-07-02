@@ -84,12 +84,13 @@ public class MainController {
 
   @GetMapping("/update_book/{bookId}")
   public String update(Model model, @PathVariable(required = false, name = "bookId") Long bookId){
-//    model.addAttribute("edit", new EditBookRequest());
+    model.addAttribute("book", new EditBookRequest());
 
     model.addAttribute("book", bookService.find(bookId));
     model.addAttribute("authors", authorService.findAll());
     model.addAttribute("categories", categoryService.findAll());
     model.addAttribute("publishers", publisherService.findAll());
+
     return "update_book";
   }
 
@@ -98,18 +99,4 @@ public class MainController {
     model.addAttribute("authors", authorService.findAll());
     return "authors";
   }
-
-//  @GetMapping("/update_book")
-//  public String update_book(Model model, Long bookId){
-//    model.addAttribute("authors", authorService.findAll());
-//    model.addAttribute("categories", categoryService.findAll());
-//    model.addAttribute("publishers", publisherService.findAll());
-//    return "update_book";
-//  }
-
-//  @GetMapping("/book")
-//  public String book(ModelMap model){
-//    model.addAttribute("books", bookService.findAll());
-//    return "book";
-//  }
 }

@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class CreateBookRequest {
+
   private String bookName;
   private List<Long> authorId;
   private List<Long> categoriesId;

@@ -1,5 +1,6 @@
 package elib.controller.book.requests;
 
+import elib.entity.Book;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -20,7 +21,8 @@ public class EditBookRequest {
   public EditBookRequest() {
   }
 
-  public EditBookRequest(Long bookId, String bookName, List<Long> authorId, List<Long> categoriesId, Integer pages, LocalDate publisherDate, List<Long> publisherId, String description) {
+  public EditBookRequest(Long bookId, String bookName, List<Long> authorId, List<Long> categoriesId,
+                         Integer pages, LocalDate publisherDate, List<Long> publisherId, String description) {
     this.bookId = bookId;
     this.bookName = bookName;
     this.authorId = authorId;

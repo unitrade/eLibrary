@@ -14,7 +14,7 @@ public class Category {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "category_id", columnDefinition = "serial")
-  private Long categoryID;
+  private Long categoryId;
 
   @Column(name = "category_name", columnDefinition = "varchar (255)")
   private String categoryName;
@@ -32,17 +32,17 @@ public class Category {
   }
 
   public Category(Long categoryID, String categoryName, String description) {
-    this.categoryID = categoryID;
+    this.categoryId = categoryID;
     this.categoryName = categoryName;
     this.description = description;
   }
 
-  public Long getCategoryID() {
-    return categoryID;
+  public Long getCategoryId() {
+    return categoryId;
   }
 
-  public void setCategoryID(Long categoryID) {
-    this.categoryID = categoryID;
+  public void setCategoryId(Long categoryId) {
+    this.categoryId = categoryId;
   }
 
   public String getCategoryName() {
@@ -84,14 +84,14 @@ public class Category {
 
     Category category = (Category) o;
 
-    if (!categoryID.equals(category.categoryID)) return false;
+    if (!categoryId.equals(category.categoryId)) return false;
     if (!categoryName.equals(category.categoryName)) return false;
     return description.equals(category.description);
   }
 
   @Override
   public int hashCode() {
-    int result = categoryID.hashCode();
+    int result = categoryId.hashCode();
     result = 31 * result + categoryName.hashCode();
     result = 31 * result + description.hashCode();
     return result;
@@ -100,7 +100,7 @@ public class Category {
   @Override
   public String toString() {
     return "Category{" +
-            "categoryID=" + categoryID +
+            "categoryId=" + categoryId +
             ", categoryName='" + categoryName + '\'' +
             ", description='" + description + '\'' +
             '}';

@@ -1,7 +1,6 @@
 package elib.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ public class Author {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column (name = "author_id", columnDefinition = "serial")
-  private Long authorID;
+  private Long authorId;
 
   @Column (name = "author_firstname", columnDefinition = "varchar (255)")
   private String authorFirstName;
@@ -35,7 +34,7 @@ public class Author {
   }
 
   public Author(Long authorID, String authorFirstName, String authorLastName, Long date, String description, List<Book> books) {
-    this.authorID = authorID;
+    this.authorId = authorID;
     this.authorFirstName = authorFirstName;
     this.authorLastName = authorLastName;
     this.date = date;
@@ -43,12 +42,12 @@ public class Author {
     this.books = books;
   }
 
-  public Long getAuthorID() {
-    return authorID;
+  public Long getAuthorId() {
+    return authorId;
   }
 
-  public void setAuthorID(Long authorID) {
-    this.authorID = authorID;
+  public void setAuthorId(Long authorId) {
+    this.authorId = authorId;
   }
 
   public String getAuthorFirstName() {
@@ -98,7 +97,7 @@ public class Author {
 
     Author author = (Author) o;
 
-    if (authorID != null ? !authorID.equals(author.authorID) : author.authorID != null) return false;
+    if (authorId != null ? !authorId.equals(author.authorId) : author.authorId != null) return false;
     if (authorFirstName != null ? !authorFirstName.equals(author.authorFirstName) : author.authorFirstName != null)
       return false;
     if (authorLastName != null ? !authorLastName.equals(author.authorLastName) : author.authorLastName != null)
@@ -110,7 +109,7 @@ public class Author {
 
   @Override
   public int hashCode() {
-    int result = authorID != null ? authorID.hashCode() : 0;
+    int result = authorId != null ? authorId.hashCode() : 0;
     result = 31 * result + (authorFirstName != null ? authorFirstName.hashCode() : 0);
     result = 31 * result + (authorLastName != null ? authorLastName.hashCode() : 0);
     result = 31 * result + (date != null ? date.hashCode() : 0);
@@ -122,7 +121,7 @@ public class Author {
   @Override
   public String toString() {
     return "Author{" +
-            "authorID=" + authorID +
+            "authorId=" + authorId +
             ", authorFirstName='" + authorFirstName + '\'' +
             ", authorLastName='" + authorLastName + '\'' +
             ", date=" + date +

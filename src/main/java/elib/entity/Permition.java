@@ -1,7 +1,6 @@
 package elib.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Class Permition
@@ -14,7 +13,7 @@ public class Permition {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "permition_id")
-  private Long permitionID;
+  private Long permitionId;
 
   @Column(name = "permition_name")
   private String permitionName;
@@ -27,16 +26,16 @@ public class Permition {
   }
 
   public Permition(Long permitionID, String permitionName) {
-    this.permitionID = permitionID;
+    this.permitionId = permitionID;
     this.permitionName = permitionName;
   }
 
-  public Long getPermitionID() {
-    return permitionID;
+  public Long getPermitionId() {
+    return permitionId;
   }
 
-  public void setPermitionID(Long permitionID) {
-    this.permitionID = permitionID;
+  public void setPermitionId(Long permitionId) {
+    this.permitionId = permitionId;
   }
 
   public String getPermitionName() {
@@ -62,13 +61,13 @@ public class Permition {
 
     Permition permition = (Permition) o;
 
-    if (!permitionID.equals(permition.permitionID)) return false;
+    if (!permitionId.equals(permition.permitionId)) return false;
     return permitionName.equals(permition.permitionName);
   }
 
   @Override
   public int hashCode() {
-    int result = permitionID.hashCode();
+    int result = permitionId.hashCode();
     result = 31 * result + permitionName.hashCode();
     return result;
   }
@@ -76,7 +75,7 @@ public class Permition {
   @Override
   public String toString() {
     return "Permition{" +
-            "permitionID=" + permitionID +
+            "permitionId=" + permitionId +
             ", permitionName='" + permitionName + '\'' +
             '}';
   }

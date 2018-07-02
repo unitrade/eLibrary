@@ -56,13 +56,13 @@
         </thead>
         <tbody >
         <tr th:each="book: ${bookk}">
-            <td th:utext="${book.bookID}">ID</td>
+            <td th:utext="${book.bookId}">ID</td>
             <td th:utext="${book.bookName}">Name</td>
             <td th:utext="${book.pages}">Surname</td>
 
             <td>
                 <span th:each="author: ${book.authors}">
-                    <a th:href="@{'/author/get/'+${author.authorID}}">
+                    <a th:href="@{'/author/get/'+${author.authorId}}">
                         <span th:text="${author.authorFirstName}+' '+${author.authorLastName}"/>
                     </a>
                 </span>
@@ -71,8 +71,8 @@
 
             <td th:utext="${book.description}">Description</td>
             <td>
-                <a th:href="@{book/delete/{bookId}(bookId=${book.bookID})}" class="btn btn-danger btn-xs">Delete</a>
-                <a th:href="@{'/book/get/'+${book.bookID}}" class="btn btn-warning btn-xs">Update</a>
+                <a th:href="@{book/delete/{bookId}(bookId=${book.bookId})}" class="btn btn-danger btn-xs">Delete</a>
+                <a th:href="@{'/book/get/'+${book.bookId}}" class="btn btn-warning btn-xs">Update</a>
             </td>
         </tr>
         </tbody>

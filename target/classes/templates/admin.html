@@ -329,7 +329,7 @@
                 <select th:field="*{authorId}">
                     <option value="0">----------------------</option>
                     <option th:each="author: ${authors}"
-                            th:value="${author.authorID}"
+                            th:value="${author.authorId}"
                             th:utext="${author.authorFirstName}+' '+${author.authorLastName}"></option>
                 </select>
             </div>
@@ -338,7 +338,7 @@
                 <select th:field="*{categoriesId}">
                     <option value="0">----------------------</option>
                     <option th:each="category: ${categories}"
-                            th:value="${category.categoryID}"
+                            th:value="${category.categoryId}"
                             th:utext="${category.categoryName}"></option>
                 </select>
             </div>
@@ -355,7 +355,7 @@
                 <select th:field="*{publisherId}">
                     <option value="0">----------------------</option>
                     <option th:each="publisher: ${publishers}"
-                            th:value="${publisher.publisherID}"
+                            th:value="${publisher.publisherId}"
                             th:utext="${publisher.publisherName}"></option>
                 </select>
             </div>
